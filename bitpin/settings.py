@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     #third_party
     'rest_framework',
     #apps
-    "users.apps.UsersConfig"
+    "users.apps.UsersConfig",
+    "content.apps.ContentConfig"
 ]
 
 MIDDLEWARE = [
@@ -149,8 +150,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=5),
-    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=5),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=5),
 }
 
 REST_FRAMEWORK = {
@@ -159,3 +160,5 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+ACCEPTED_NUMBER_OF_SAMPLES=os.getenv("ACCEPTED_NUMBER_OF_SAMPLES")
