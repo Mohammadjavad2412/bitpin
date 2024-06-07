@@ -1,0 +1,6 @@
+migrations
+.git
+__pycache__
+static
+*.pyc
+.vscode
